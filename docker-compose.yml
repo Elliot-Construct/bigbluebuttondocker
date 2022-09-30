@@ -184,8 +184,8 @@ services:
       SOUNDS_LANGUAGE: ${SOUNDS_LANGUAGE:-en-us-callie}
       ESL_PASSWORD: ${FSESL_PASSWORD:-ClueCon}
     volumes:
-      - ./conf/sip_profiles:/etc/freeswitch/sip_profiles/external
-      - ./conf/dialplan_public:/etc/freeswitch/dialplan/public_docker
+      - bbbsip_profiles:/etc/freeswitch/sip_profiles/external
+      - bbbdialplan_public:/etc/freeswitch/dialplan/public_docker
       - vol-freeswitch:/var/freeswitch/meetings
     network_mode: host
 
@@ -203,7 +203,7 @@ services:
     volumes:
       - bigbluebutton:/var/bigbluebutton
       - html5-static:/html5-static:ro
-      - ${DEFAULT_PRESENTATION:-/dev/null}:/www/default.pdf
+      - bbbwww:/www
     network_mode: host
     extra_hosts:
       - "host.docker.internal:10.7.7.1"
@@ -476,7 +476,9 @@ volumes:
   vol-kurento:
   vol-mediasoup:
   html5-static:
-
+  bbb-sip_profiles:
+  bbbdialplan_public:
+  bbbwww:
   ssl_data:
 
 
