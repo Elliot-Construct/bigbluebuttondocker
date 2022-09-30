@@ -418,7 +418,7 @@ services:
     command:
       - "--external-ip=${EXTERNAL_IPv4}/${EXTERNAL_IPv4}"
       - "--external-ip=${EXTERNAL_IPv6:-::1}/${EXTERNAL_IPv6:-::1}"
-      - "--static-auth-secret=${TURN_SECRET}"
+      - "--static-auth-secret=3a3f3e196ed6df668a5b0b744e832abded2cb65f405197b7e51b3ddbd9c5ce6e"
     volumes:
       
       - ssl_data:/etc/resty-auto-ssl
